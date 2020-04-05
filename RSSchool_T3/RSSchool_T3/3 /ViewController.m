@@ -87,7 +87,7 @@
     if ([self.textFieldRed.text isEqualToString:[NSString stringWithFormat:@"%ld", numRed]]
             && [self.textFieldGreen.text isEqualToString:[NSString stringWithFormat:@"%ld", numGreen]]
             && [self.textFieldBlue.text isEqualToString:[NSString stringWithFormat:@"%ld", numBlue]]
-            && numRed<=255 && numGreen<=255 && numBlue<=255) {
+            && numRed>=0 && numRed<=255 && numGreen>=0 && numGreen<=255 && numBlue>=0 && numBlue<=255) {
         UIColor *color = [UIColor colorWithRed:numRed/255.0f green:numGreen/255.0f blue:numBlue/255.0f alpha:1];
         self.viewResultColor.backgroundColor = color;
         NSString *col = [NSString stringWithFormat:@"0x%06lX", (numRed<<16 | numGreen<<8 | numBlue<<0)];
